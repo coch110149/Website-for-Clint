@@ -1,0 +1,17 @@
+a:link{text-decoration: none;color: #770099}
+a:hover{color:#00ffff; text-decoration:underline}
+h1{display: inline;font-family:sans-serif; vertical-align: 30% font-size: 34pt}
+h2{font-size:24pt; font-variant: small-caps}
+div.projects span.entry{background-color:#0000AA;color: #FFF}
+div.projects a{background-color: yellow }
+hr{height: 4px; background-color: purple}
+strong{font-weight: 900; text-decoration: underline}
+.center{text-align: center;}
+.delete{width: 200px; display:block; margin-left: auto;  margin-right: auto}
+.main{height:auto; width:200px; position:relative; left: 30%; border: 3px solid }
+#projects{background-color:#00f;}
+
+
+
+	
+
