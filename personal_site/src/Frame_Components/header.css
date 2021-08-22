@@ -1,0 +1,32 @@
+.quickLinks {
+    text-transform: lowercase;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.quickLinks a {
+    float: left;
+    color: crimson;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 21px;
+    
+}
+
+.thumbnail {
+    height: 144px;
+    width: 144px;
+    padding: 4px;
+    border: crimson 4px solid;
+}
+
+
+.header{
+    display: flex;
+    justify-content: stretch;
+    width:inherit;
+    height: 160px;
+    background-color:rgb(189, 184, 132);   
+}
