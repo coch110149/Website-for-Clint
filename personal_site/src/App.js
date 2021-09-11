@@ -1,22 +1,40 @@
-import Header from './Frame_Components/header';
-import Footer from './Frame_Components/footer';
+import Header from './Frame_Components/Header';
+import Footer from './Frame_Components/Footer';
+import Content from './Frame_Components/Content';
+import React from 'react';
 
-function App() {
-  return (
-    <div>
-      <h1>Clint Cochrane</h1>
-      <Header quickLinks={["contact", "projects", "about"]}/>
-      <hr/>
-			<h2> Welcome! </h2>
-				<p>
-					Hello, and welcome to the second attempt at a website by Clint. The purpose of this site is to help me practice 
-					programming techniques as I learn them. This will become my site to tell people about myself. For those who don't know me 
-					very well, I ask you to check out the life story section and connect with me on your social platform of choice. 
-					To everyone, stay tuned. This site will change a bunch. I hope you enjoy it. 
-				</p>
-		  <Footer/>
-    </div>
-  );
-}
+class App extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			pageLinks:["contact", "projects", "about"],
+			logo :"https://avatars.githubusercontent.com/u/9051629?v=4",
+			currentIndex: 0
+		}
+		this.whatElementToDisplayHere = this.whatElementToDisplayHere.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+	}
+	whatElementToDisplayHere(option){
+		return (<h1>{option}</h1>);	
+	}
+
+	handleClick(event) {
+		let targetString = event.target.hash.replace("#","");
+		let index = this.state.pageLinks.indexOf(targetString);
+
+		this.setState({
+			currentIndex: index 
+		})
+	}
+
+  render(){
+	return (
+    	<div>
+      		<Header logoUrl={this.state.logo} quickLinks={this.state.pageLinks} onClick={this.handleClick}/>
+      		<Content elementToDisplay={this.whatElementToDisplayHere(this.state.pageLinks[this.state.currentIndex])}  />
+			<Footer/>
+		</div>
+	);
+}}
 
 export default App;
